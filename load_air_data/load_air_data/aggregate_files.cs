@@ -78,6 +78,8 @@ namespace load_air_data
             {
                 w.WriteLine(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + " : " + text);
             }
+            Console.WriteLine(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + " : " + text);
+
         }
     }
 }

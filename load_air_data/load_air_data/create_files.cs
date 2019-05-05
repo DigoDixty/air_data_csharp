@@ -47,7 +47,7 @@ namespace load_air_data
             return pingable;
         }
 
-        public static int Main(string v_country, string v_st_load)
+        public static int Main(string v_st_load, string v_country)
         {   
             //Parametros
             string v_sub_dir = "\\";
@@ -91,7 +91,7 @@ namespace load_air_data
 
                     System.Diagnostics.Process process = new System.Diagnostics.Process();
                     System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-                    //startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                    startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                     process.StartInfo = startInfo;
                     startInfo.FileName = "run_py.bat";
                     startInfo.Arguments = v_param01 + " " + file_dest;

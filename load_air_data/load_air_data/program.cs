@@ -20,15 +20,15 @@ namespace load_air_data
                // return 1;
             }
 
-            string v_01 = ""; // country
-            string v_02 = ""; // arrival or departure
-            string v_03 = ""; // process
+            string v_01 = ""; // arrival or departure
+            string v_02 = ""; // process
+            string v_03 = ""; // country
 
-            v_01 = "brazil";
-            v_02 = "arrivals";
-            v_03 = "create_files";
+            v_01 = "departures";
+            v_02 = "aggreg_load_func";
+            //v_03 = "brazil";
 
-            //v_01 = args[0];
+            v_01 = args[0];
             //v_02 = args[1];
             //v_03 = args[2];
 
@@ -36,20 +36,20 @@ namespace load_air_data
             System.Console.WriteLine("type: " + v_01);
             System.Console.WriteLine("execution: " + v_02);
 
-            //v_03 = "create_files";
-            if (v_03 == "create_files")
+            //v_01 = "create_files";
+            if (v_02 == "create_files")
             {
-                create_files.Main(v_01, v_02);
+                create_files.Main(v_01, v_03);
             }
 
-            //v_03 = "aggregate_files";
-            if (v_03 == "aggregate_files")
+            //v_01 = "aggregate_files";
+            if (v_02 == "aggregate_files" || v_02 == "aggreg_load_func")
             {
                 aggregate_files.Main(v_01);
             }
 
-            //v_03 = "exec_load_functions";
-            if (v_03 == "exec_load_functions")
+            //v_01 = "exec_load_functions";
+            if (v_02 == "exec_load_functions" || v_02 == "aggreg_load_func")
             {
                 exec_load_functions.Main(v_01);
             }
